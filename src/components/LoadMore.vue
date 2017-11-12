@@ -58,13 +58,14 @@ export default {
   margin: auto;
   padding: 15px 0;
   .el-button{
-    background-color: $entry-btn-grey;
-    transition: 1s background-color ease-in;
+    background-color: #ffffff;
+    color: $black;
+    transition: 1s border ease-in;
     border-radius: 20px;
-    border: none;
+    border: 1px solid $entry-btn-grey;
     width: 80%;
     &:hover{
-      background-color: $entry-btn-hover;
+      border: 1px solid $entry-btn-hover;
     }
   }
   .el-alert{

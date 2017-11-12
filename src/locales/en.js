@@ -7,8 +7,8 @@ export default {
 
   yes: 'Yes',
   no: 'No',
-  pleaseEnter: 'Please Enter',
-  pleaseSelect: 'Please Select',
+  pleaseEnter: 'Please Enter ',
+  pleaseSelect: 'Please Select ',
   cancel: 'Cancel',
   confirm: 'Confirm',
   update: 'Update',

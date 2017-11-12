@@ -51,7 +51,7 @@
                   :placeholder="this.$t('pleaseSelect') + this.$t('linkThemeStr')">
                   <el-option
                     v-for="item in themeList" :key="item.key"
-                    :label="item.key"
+                    :label="$getCurrentLang() === 'en' ? item.value : item.key"
                     :value="item.value">
                   </el-option>
                 </el-select>

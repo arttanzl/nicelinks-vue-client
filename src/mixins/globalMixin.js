@@ -41,7 +41,7 @@ Vue.mixin({
 
     $verifyUrl (rule, value, callback) {
       if (!value || value.length <= 0) {
-        callback()
+        callback(new Error(this.$t('pleaseEnter') + this.$t('linkAddressStr')))
       } if (!$util.isLegalUrl(value)) {
         callback(new Error(this.$t('enterLegalUrl')))
       } else {

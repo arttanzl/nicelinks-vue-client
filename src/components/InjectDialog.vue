@@ -6,34 +6,35 @@
         <el-form :model="fillForm" :rules="rules" ref="fillForm">
           <div class="form-group">
             <label class="col-sm-3 control-label">
-                {{ this.$t('linkAddressStr') }} <em>*</em>：</label>
+                {{ $t('linkAddressStr') }} <em>*</em>：</label>
             <div class="col-sm-8">
               <el-form-item prop="urlPath">
                 <el-input
                   v-model="fillForm.urlPath"
                   @blur="getLinkPageData"
-                  :placeholder="this.$t('pleaseEnter') + this.$t('linkAddressStr')"></el-input>
+                  :placeholder="$t('pleaseEnter') + $t('linkAddressStr')">
+                </el-input>
               </el-form-item>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label"> {{ this.$t('linkNameStr') }} <em>*</em>：</label>
+            <label class="col-sm-3 control-label"> {{ $t('linkNameStr') }} <em>*</em>：</label>
             <div class="col-sm-8">
               <el-form-item prop="title">
                 <el-input
                   v-model="fillForm.title"
-                  :placeholder="this.$t('pleaseEnter') + this.$t('linkNameStr')"></el-input>
+                  :placeholder="$t('pleaseEnter') + $t('linkNameStr')"></el-input>
               </el-form-item>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label"> {{ this.$t('linkClassifyStr') }} <em>*</em>：</label>
+            <label class="col-sm-3 control-label"> {{ $t('linkClassifyStr') }} <em>*</em>：</label>
             <div class="col-sm-8">
               <el-form-item prop="classify">
                 <el-select class="wrap-block" v-model="fillForm.classify"
-                  :placeholder="this.$t('pleaseSelect') + this.$t('linkClassifyStr')">
+                  :placeholder="$t('pleaseSelect') + $t('linkClassifyStr')">
                   <el-option
                     v-for="item in classifyList" :key="item.value"
                     :label="$t(item.name)"
@@ -45,14 +46,15 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label"> {{ this.$t('linkThemeStr') }} <em>*</em>：</label>
+            <label class="col-sm-3 control-label"> {{ $t('linkThemeStr') }} <em>*</em>：</label>
             <div class="col-sm-8">
               <el-form-item prop="theme">
                 <el-select class="wrap-block" v-model="fillForm.theme"
-                  :placeholder="this.$t('pleaseSelect') + this.$t('linkThemeStr')">
+                  :placeholder="$t('pleaseSelect') + $t('linkThemeStr')">
                   <el-option
-                    v-for="item in themeList" :key="item.key"
-                    :label="item.key"
+                    v-for="item in themeList"
+                    :key="item.key"
+                    :label="$getCurrentLang() === 'en' ? item.value : item.key"
                     :value="item.value">
                   </el-option>
                 </el-select>
@@ -61,13 +63,13 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label"> {{ this.$t('linkTagsStr') }} <em>*</em>：</label>
+            <label class="col-sm-3 control-label"> {{ $t('linkTagsStr') }} <em>*</em>：</label>
             <div class="col-sm-8">
               <el-form-item prop="tags">
                 <el-select class="wrap-block"
                   v-model="fillForm.tags" allow-create multiple filterable
                   :multiple-limit="3"
-                  :placeholder="this.$t('pleaseSelect') + this.$t('linkTagsStr')">
+                  :placeholder="$t('pleaseSelect') + $t('linkTagsStr')">
                   <el-option v-for="(item, index) in tagsList" :key="index"
                     :label="item" :value="item">
                   </el-option>
@@ -77,11 +79,11 @@
           </div>
 
           <div class="form-group">
-            <label class="col-sm-3 control-label"> {{ this.$t('linkDescStr') }} <em>*</em>：</label>
+            <label class="col-sm-3 control-label"> {{ $t('linkDescStr') }} <em>*</em>：</label>
             <div class="col-sm-8">
               <el-form-item prop="desc">
                 <el-input type="textarea" :maxlength="360" :autosize="{ minRows: 3, maxRows: 10}"
-                  :placeholder="this.$t('pleaseSelect') + this.$t('linkDescStr')"
+                  :placeholder="$t('pleaseSelect') + $t('linkDescStr')"
                   v-model="fillForm.desc">
                 </el-input>
               </el-form-item>
@@ -91,7 +93,7 @@
       </div>
 
       <div slot="footer" class="dialog-footer">
-        <el-button @click="isShowDlgFlag = false">{{ this.$t('cancel') }}</el-button>
+        <el-button @click="isShowDlgFlag = false">{{ $t('cancel') }}</el-button>
         <el-button type="primary" @click="onCommitClick">{{ this.$t('confirm') }}</el-button>
       </div>
     </el-dialog>
@@ -160,12 +162,12 @@ export default {
 
   methods: {
     getLinkPageData () {
+      if (!this.fillForm.urlPath) return
+
       this.$apis.crawlLinksInfo({url: this.fillForm.urlPath}).then(result => {
         this.fillForm.title = result.title
         this.fillForm.desc = result.desc
       }).catch((error) => {
-        console.log(error)
-        this.isLoading = false
         this.$message.error(`${error}`)
       })
     },
