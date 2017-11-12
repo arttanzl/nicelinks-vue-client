@@ -12,6 +12,15 @@ var webpack = require('webpack')
 var config = require('../config')
 var webpackConfig = require('./webpack.prod.conf')
 
+// backups for build @2017-11-12
+var backupsSpinner = ora('Start backing up the last packaged project...')
+backupsSpinner.start()
+let backupsPath = path.resolve(__dirname, '../backups')
+shell.rm('-rf', backupsPath)
+shell.mkdir('-p', backupsPath)
+shell.cp('-R', config.build.assetsRoot + '/*', backupsPath)
+backupsSpinner.stop()
+
 var spinner = ora('building for production...')
 spinner.start()
 
