@@ -44,7 +44,7 @@ export default {
 
   methods: {
     onItemClick (item) {
-      this.$router.push(`/theme/${item.value}`)
+      this.$jumpRouteByTheme(item.value)
     }
   }
 }

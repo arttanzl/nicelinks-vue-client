@@ -8,8 +8,16 @@ const getStorageName = (name = '') => {
 }
 
 if (typeof String.prototype.startsWith !== 'function') {
-  Window.String.prototype.startsWith = function (prefix) {
+  window.String.prototype.startsWith = function (prefix) {
     return this.slice(0, prefix.length) === prefix
+  }
+}
+
+if (typeof String.prototype.firstUpperCase !== 'function') {
+  window.String.prototype.firstUpperCase = function () {
+    return this.replace(/^\S/, function (s) {
+      return s.toUpperCase()
+    })
   }
 }
 

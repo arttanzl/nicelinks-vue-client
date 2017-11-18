@@ -39,6 +39,12 @@ Vue.mixin({
       Cookies.set('lang', currentLang)
     },
 
+    $jumpRouteByTheme (theme = '') {
+      if (!theme) { return }
+
+      this.$router.push(`/theme/${theme.toLocaleLowerCase()}`)
+    },
+
     $verifyUrl (rule, value, callback) {
       if (!value || value.length <= 0) {
         callback(new Error(this.$t('pleaseEnter') + this.$t('linkAddressStr')))

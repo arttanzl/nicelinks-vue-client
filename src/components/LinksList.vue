@@ -166,7 +166,7 @@ export default {
     },
 
     onThemeClick (theme) {
-      this.$router.push(`/theme/${theme}`)
+      this.$jumpRouteByTheme(theme)
     },
 
     onTagClick (tag) {

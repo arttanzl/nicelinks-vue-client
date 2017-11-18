@@ -31,6 +31,7 @@ export default {
 
       if (this.$route.params.theme) {
         params.theme = decodeURIComponent(this.$route.params.theme)
+        params.theme = params.theme.firstUpperCase()
       }
       return params
     },
