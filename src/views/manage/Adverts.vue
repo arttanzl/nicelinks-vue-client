@@ -132,11 +132,11 @@ export default{
     },
 
     onAddAdsClick () {
-      this.tableData.unshift({
+      this.tableData.push({
         path: '',
         image: '',
         active: true,
-        sort: 1,
+        sort: 0,
         modifyTime: new Date()
       })
     }
