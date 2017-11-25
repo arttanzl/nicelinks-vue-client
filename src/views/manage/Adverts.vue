@@ -28,6 +28,11 @@
                   <el-input v-model="scope.row.image"></el-input>
                 </template>
               </el-table-column>
+              <el-table-column prop="image" label="排序" min-width="100">
+                <template scope="scope">
+                  <el-input v-model="scope.row.sort"></el-input>
+                </template>
+              </el-table-column>
               <el-table-column prop="active" :label="$t('isActived')" width="100">
                 <template scope="scope">
                   <el-switch
@@ -127,10 +132,11 @@ export default{
     },
 
     onAddAdsClick () {
-      this.tableData.push({
+      this.tableData.unshift({
         path: '',
         image: '',
         active: true,
+        sort: 1,
         modifyTime: new Date()
       })
     }

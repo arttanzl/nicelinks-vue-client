@@ -34,7 +34,9 @@ export default {
 
   created () {
     this.$apis.getSysConf().then(result => {
-      this.advertsList = result.advertsList
+      this.advertsList = result.advertsList.sort((a, b) => {
+        return a - b
+      })
     }).catch((error) => {
       this.$message.error(`${error}`)
     })
