@@ -39,9 +39,13 @@ Vue.mixin({
       Cookies.set('lang', currentLang)
     },
 
-    $jumpRouteByTheme (theme = '') {
-      if (!theme) { return }
+    $switchRouteByExplore (name = '') {
+      if (!name) { return }
+      this.$router.push(`/explore/${name}`)
+    },
 
+    $switchRouteByTheme (theme = '') {
+      if (!theme) { return }
       this.$router.push(`/theme/${theme.toLocaleLowerCase()}`)
     },
 

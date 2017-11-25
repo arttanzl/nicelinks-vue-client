@@ -11,14 +11,14 @@ let commonConf = [{
   },
   component: resolve => require(['partials/Login'], resolve)
 }, {
+  path: '/index',
+  redirect: '/'
+}, {
   path: '*',
   meta: {
     title: $util.setTitleLang('404', '404')
   },
   component: NotFound
-}, {
-  path: 'index',
-  redirect: '/'
 }]
 
 export default routesMap.concat(commonConf)

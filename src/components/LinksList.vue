@@ -166,7 +166,7 @@ export default {
     },
 
     onThemeClick (theme) {
-      this.$jumpRouteByTheme(theme)
+      this.$switchRouteByTheme(theme)
     },
 
     onTagClick (tag) {

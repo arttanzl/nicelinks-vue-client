@@ -2,15 +2,14 @@ import Frame from 'partials/Frame'
 import { $util } from 'helper'
 
 export default {
-  path: '',
+  path: '/',
   component: Frame,
   children: [{
     path: '/',
-    alias: ['resource', 'info', 'skill', 'life'],
     meta: {
       title: $util.setTitleLang('NICE LINKS', '倾城之链')
     },
-    component: resolve => require(['views/Nicelinks'], resolve)
+    component: resolve => require(['views/Index'], resolve)
   }, {
     path: 'setting',
     meta: {

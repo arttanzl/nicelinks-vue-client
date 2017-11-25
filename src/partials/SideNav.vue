@@ -88,7 +88,7 @@ export default {
     },
 
     handleClick (item) {
-      this.$router.push(`/${item.name}`)
+      this.$switchRouteByExplore(item.name)
       this.$bus.emit('fetch-search', {
         'classify': item.value
       })
