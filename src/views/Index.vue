@@ -19,7 +19,7 @@
           <span class="part"></span>
           <h1>{{ $t('niceLinksStr') }}</h1>
           <p>
-            {{ niceLinksDesc }}
+            {{ $t('niceLinksDesc') }}
             <br>
             <a class="" href="/explore">{{ $t('exploreNice') }}</a>
           </p>
@@ -38,7 +38,6 @@ export default {
 
   data () {
     return {
-      niceLinksDesc: '尽可能收集优秀的网站，让人们可以见识和学习更多有趣的事物'
     }
   },
 
@@ -50,10 +49,12 @@ export default {
 
   locales: {
     en: {
-      exploreNice: 'Explore Nice'
+      exploreNice: 'Explore Nice',
+      niceLinksDesc: 'Gather as many nice websites as possible in the world so that people can see and learn more interesting and useful things'
     },
     zh: {
-      exploreNice: '发现美好'
+      exploreNice: '发现美好',
+      niceLinksDesc: '尽可能云集世间优秀的网站，让人们可以从中，见识和学习更多有趣且有用的事物'
     }
   }
 }
