@@ -117,13 +117,13 @@ export default {
 @import "./../assets/scss/variables.scss";
   .side-nav{
     text-align: left;
-    // width: $side-nav-width;
+    width: $side-nav-width;
     height: calc(100% - 80px);
     position: fixed;
     overflow-y: scroll;
-    left: 0;
     top: $header-height;
     z-index: 1000;
+    box-shadow: 0 0 1000px 1000px rgba(0,0,0,.6);
     &::-webkit-scrollbar {
       background: transparent;
       width: 0px;
@@ -141,6 +141,15 @@ export default {
       height: 16px;
       margin-right: 10px;
       color: #130c0e;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: block;
+      width: calc(100vw - 100%);
+      height: 100%;
     }
   }
 </style>

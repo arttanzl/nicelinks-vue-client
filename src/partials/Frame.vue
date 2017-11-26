@@ -72,21 +72,23 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/variables.scss";
-
-.slide-enter-active, .slide-leave-active {
-  width: $side-nav-width;
-  opacity: 1;
-  -webkit-transition: all 200ms cubic-bezier(0.125, 0.565, 0.860, 0.310);
-   -moz-transition: all 200ms cubic-bezier(0.125, 0.565, 0.860, 0.310);
-     -o-transition: all 200ms cubic-bezier(0.125, 0.565, 0.860, 0.310);
-        transition: all 200ms cubic-bezier(0.125, 0.565, 0.860, 0.310);
-  -webkit-transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310);
-     -moz-transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310);
-       -o-transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310);
-          transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310);
+.slide-enter{
+  left: -210px;
 }
-.slide-enter, .slide-leave-to{
-  width: 0;
-  opacity: 0;
+.slide-enter-active{
+  transition: left 200ms cubic-bezier(0.125, 0.565, 0.860, 0.310);
+  transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310); 
+}
+.slide-enter-to{
+  left: 0px;
+}
+.slide-leave{
+  left: 0px;
+}
+.slide-leave-active{
+  transition: left .1s
+}
+.slide-leave-to{
+  left: -210px;
 }
 </style>
