@@ -77,7 +77,7 @@ export default {
 }
 .slide-enter-active{
   transition: left 200ms cubic-bezier(0.125, 0.565, 0.860, 0.310);
-  transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310); 
+  transition-timing-function: cubic-bezier(0.125, 0.565, 0.860, 0.310);
 }
 .slide-enter-to{
   left: 0px;

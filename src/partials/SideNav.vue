@@ -123,6 +123,7 @@ export default {
     overflow-y: scroll;
     top: $header-height;
     z-index: 1000;
+    background-color: $white;
     box-shadow: 0 0 1000px 1000px rgba(0,0,0,.6);
     &::-webkit-scrollbar {
       background: transparent;

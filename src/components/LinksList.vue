@@ -238,7 +238,7 @@ export default {
         .tag{
           cursor: pointer;
           &:hover{
-            color: $element-blue;
+            color: $blue;
           }
         }
         .tag + .tag{
