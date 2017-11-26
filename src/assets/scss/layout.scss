@@ -17,14 +17,13 @@
     background-color: #f0f0f4;
     .main-container{
       width: 100%;
-      max-width: 1280px;
+      max-width: 960px;
       margin: auto;
       .entry-list{
         display: inline-block;
         float: left;
         background-color: $entry-list-bg;
-        padding: auto 20px;
-        width: 60%;
+        width: 66%;
         .page-responsive{
           padding: 15px 0;
         }
