@@ -89,9 +89,6 @@ export default {
 
     handleClick (item) {
       this.$switchRouteByExplore(item.name)
-      this.$bus.emit('fetch-search', {
-        'classify': item.value
-      })
       this.triggerSideNav()
     },
 

@@ -39,8 +39,8 @@ export default {
   },
 
   created () {
-    this.$bus.on('inject-success', this.fetchSearch)
-    this.$bus.on('fetch-search', this.fetchSearch)
+    this.$bus.on('inject-success', this.$fetchSearch)
+    this.$bus.on('fetch-search', this.$fetchSearch)
   },
 
   mounted () {
@@ -52,7 +52,7 @@ export default {
     if (currentItem && currentItem['value']) {
       this.tableControl.classify = currentItem && currentItem['value']
     }
-    this.fetchSearch()
+    this.$fetchSearch()
   },
 
   methods: {

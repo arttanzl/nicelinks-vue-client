@@ -1,5 +1,12 @@
 import $config from 'config'
 
+const getValueByName = (source = [], name = '') => {
+  let result = source.filter(item => {
+    return item.name === name
+  })[0]
+  return result && result['value'] || -1
+}
+
 export default {
   data () {
     return {
@@ -25,18 +32,22 @@ export default {
       Object.assign(params, this.$_.cloneDeep(this.tableControl))
 
       params.userId = this.userInfo && this.userInfo._id || ''
-      if (this.$route.params.tags) {
-        params.tags = decodeURIComponent(this.$route.params.tags)
+      if (this.$route.params.classify) {
+        params.classify = getValueByName($config.classify, this.$route.params.classify)
       }
 
       if (this.$route.params.theme) {
         params.theme = decodeURIComponent(this.$route.params.theme)
         params.theme = params.theme.firstUpperCase()
       }
+
+      if (this.$route.params.tags) {
+        params.tags = decodeURIComponent(this.$route.params.tags)
+      }
       return params
     },
 
-    fetchSearch (params = {}, isLoadMore) {
+    $fetchSearch (params = {}, isLoadMore) {
       params = this.drawAjaxParams(params)
       let apiName = params.tags ? 'getLinksByTag' : 'getNiceLinks'
 
@@ -61,7 +72,7 @@ export default {
       this.tableControl.pageCount = 1
       this.tableControl.sortTarget = item.sortTarget
       this.tableControl.sortType = item.sortType
-      this.fetchSearch()
+      this.$fetchSearch()
     }
   }
 }

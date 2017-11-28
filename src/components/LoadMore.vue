@@ -35,7 +35,7 @@ export default {
   methods: {
     onLoadMoreClick () {
       this.tableControl.pageCount += 1
-      this.fetchSearch({}, true)
+      this.$fetchSearch({}, true)
     }
   },
 

@@ -11,6 +11,12 @@ export default {
     },
     component: resolve => require(['views/Index'], resolve)
   }, {
+    path: 'explore/:classify',
+    meta: {
+      title: $util.setTitleLang('分类', 'Classify')
+    },
+    component: resolve => require(['views/Nicelinks'], resolve)
+  }, {
     path: 'setting',
     meta: {
       isNeedLogin: true,
