@@ -4,7 +4,7 @@ const getValueByName = (source = [], name = '') => {
   let result = source.filter(item => {
     return item.name === name
   })[0]
-  return result && result['value'] || -1
+  return result && result['value']
 }
 
 export default {
@@ -30,10 +30,11 @@ export default {
   methods: {
     drawAjaxParams (params = {}) {
       Object.assign(params, this.$_.cloneDeep(this.tableControl))
-
       params.userId = this.userInfo && this.userInfo._id || ''
-      if (this.$route.params.classify) {
-        params.classify = getValueByName($config.classify, this.$route.params.classify)
+
+      let classifyVal = getValueByName($config.classify, this.$route.params.classify)
+      if (this.$route.params.classify && classifyVal) {
+        params.classify = classifyVal
       }
 
       if (this.$route.params.theme) {

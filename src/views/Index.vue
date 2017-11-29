@@ -21,7 +21,7 @@
           <p>
             {{ $t('niceLinksDesc') }}
             <br>
-            <a class="" href="/explore">{{ $t('exploreNice') }}</a>
+            <a class="" href="/explore/all">{{ $t('exploreNice') }}</a>
           </p>
         </section>
       </section>
