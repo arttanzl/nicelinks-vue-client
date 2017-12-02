@@ -1,5 +1,5 @@
 export default {
-  // loign lang
+  all: '全部',
   signIn: '登录',
   signUp: '注册',
   signOut: '登出',

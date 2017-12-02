@@ -45,6 +45,9 @@ Vue.component('links-list', LinksList)
 import OperateTabs from 'components/OperateTabs'
 Vue.component('operate-tabs', OperateTabs)
 
+import SubHead from 'components/SubHead'
+Vue.component('sub-head', SubHead)
+
 import LoadMore from 'components/LoadMore'
 Vue.component('load-more', LoadMore)
 

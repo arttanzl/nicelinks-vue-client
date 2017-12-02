@@ -29,7 +29,7 @@ export default {
 
   methods: {
     drawAjaxParams (params = {}) {
-      Object.assign(params, this.$_.cloneDeep(this.tableControl))
+      params = Object.assign(this.$_.cloneDeep(this.tableControl), params)
       params.userId = this.userInfo && this.userInfo._id || ''
 
       let classifyVal = getValueByName($config.classify, this.$route.params.classify)
@@ -48,7 +48,7 @@ export default {
       return params
     },
 
-    $fetchSearch (params = {}, isLoadMore) {
+    $fetchSearch (params = {}, isLoadMore = false) {
       params = this.drawAjaxParams(params)
       let apiName = params.tags ? 'getLinksByTag' : 'getNiceLinks'
 
@@ -56,20 +56,22 @@ export default {
       this.$apis[apiName](params).then(result => {
         this.isLoading = false
         if (!result || result.length <= 0) {
+          this.niceLinksArr = []
           this.isShowLoadMore = false
           return
+        } else {
+          this.niceLinksArr = isLoadMore ? this.niceLinksArr.concat(result) : result
         }
-        this.niceLinksArr = isLoadMore ? this.niceLinksArr.concat(result) : result
       }).catch((error) => {
         this.isLoading = false
         this.$message.error(`${error}`)
-        this.niceLinksArr = $config.default
+        // this.niceLinksArr = $config.default
       }).finally(() => {
         this.isLoading = false
       })
     },
 
-    onSwitchTabs (item = {}) {
+    $onSwitchTabs (item = {}) {
       this.tableControl.pageCount = 1
       this.tableControl.sortTarget = item.sortTarget
       this.tableControl.sortType = item.sortType

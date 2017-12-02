@@ -4,7 +4,8 @@
       <div class="panel-body">
         <div class="main-container">
           <div class="entry-list">
-            <operate-tabs @switch-tabs="onSwitchTabs"></operate-tabs>
+            <sub-head :theme-list="themeList" @fetch-search="$fetchSearch"></sub-head>
+            <operate-tabs @switch-tabs="$onSwitchTabs"></operate-tabs>
             <links-list :pdata="niceLinksArr" :is-loading="isLoading"></links-list>
             <load-more></load-more>
           </div>
@@ -26,6 +27,7 @@ export default {
 
   data () {
     return {
+      themeList: []
     }
   },
 
@@ -34,7 +36,7 @@ export default {
 
   watch: {
     '$route': function (to, from) {
-      // 只是别名变化, Vue 无法监听到@17-07-18;
+      // 只是别名变化, Vue 无法监听到 @17-07-18;
     }
   },
 
@@ -44,14 +46,15 @@ export default {
   },
 
   mounted () {
-    let currentPath = this.$route.path.replace('/', '')
+    let currentClassify = this.$route.params.classify
     let currentItem = $config.classify.find(item => {
-      return currentPath === item.name
+      return currentClassify === item.name
     })
 
     if (currentItem && currentItem['value']) {
       this.tableControl.classify = currentItem && currentItem['value']
     }
+    this.themeList = $config.theme[this.tableControl.classify]
     this.$fetchSearch()
   },
 

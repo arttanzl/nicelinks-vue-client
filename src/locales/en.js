@@ -1,5 +1,5 @@
 export default {
-  // loign lang
+  all: 'All',
   signIn: 'Sign In',
   signUp: 'Sign Up',
   signOut: 'Sign Out',
