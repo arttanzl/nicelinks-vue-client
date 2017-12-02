@@ -4,9 +4,9 @@
       <div class="panel-body">
         <div class="main-container">
           <div class="entry-list">
+            <h3 class="classify-title">{{ $t('themeCollection') }}</h3>
             <div v-for="(obj, index) in themeList" :key="index">
-              <h3 class="classify-title">{{ classifyList[index]['key'] }}</h3>
-              <el-button v-for="item in obj" :key="item.value"
+              <el-button class="radius-btn" v-for="item in obj" :key="item.value"
                 type="text" @click="onItemClick(item)">
                 {{ item.key }}
               </el-button>
@@ -23,7 +23,7 @@
 import $config from 'config'
 
 export default {
-  name: 'TagsCollections',
+  name: 'ThemeCollections',
 
   data () {
     return {
@@ -57,6 +57,8 @@ export default {
   .entry-list{
     padding: 15px;
     .classify-title{
+      font-size: $font-large;
+      font-weight: 500;
       margin: 15px auto;
     }
   }

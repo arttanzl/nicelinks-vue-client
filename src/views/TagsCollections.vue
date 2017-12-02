@@ -4,8 +4,8 @@
       <div class="panel-body">
         <div class="main-container">
           <div class="entry-list">
-          <h3 class="classify-title">{{ $t('tagsCollection') }}</h3>
-            <el-button v-for="(item, index) in tagsList" :key="item"
+            <h3 class="classify-title">{{ $t('tagsCollection') }}</h3>
+            <el-button class="radius-btn" v-for="(item, index) in tagsList" :key="item"
               type="text" @click="onItemClick(item)">{{ item }}
             </el-button>
           </div>
@@ -57,6 +57,8 @@ export default {
   .entry-list{
     padding: 15px;
     .classify-title{
+      font-size: $font-large;
+      font-weight: 500;
       margin: 15px auto;
     }
   }

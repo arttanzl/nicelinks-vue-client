@@ -77,4 +77,10 @@ export default {
 .operate-tabs{
   padding-top: 15px;
 }
+
+@media screen and (max-width: $mobile-screen) {
+  .operate-tabs{
+    padding-top: 5rem;
+  }
+}
 </style>
