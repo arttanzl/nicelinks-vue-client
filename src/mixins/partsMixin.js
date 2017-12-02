@@ -14,7 +14,6 @@ export default {
       isShowLoadMore: true,
       niceLinksArr: [],
       tableControl: {
-        // default no classify.
         // classify: -1,
         pageCount: 1,
         pageSize: 15,
@@ -28,8 +27,8 @@ export default {
   },
 
   methods: {
-    drawAjaxParams (params = {}) {
-      params = Object.assign(this.$_.cloneDeep(this.tableControl), params)
+    drawAjaxParams () {
+      let params = this.$_.cloneDeep(this.tableControl)
       params.userId = this.userInfo && this.userInfo._id || ''
 
       let classifyVal = getValueByName($config.classify, this.$route.params.classify)
@@ -49,7 +48,9 @@ export default {
     },
 
     $fetchSearch (params = {}, isLoadMore = false) {
-      params = this.drawAjaxParams(params)
+      Object.assign(this.tableControl, params)
+
+      params = this.drawAjaxParams()
       let apiName = params.tags ? 'getLinksByTag' : 'getNiceLinks'
 
       this.isLoading = true

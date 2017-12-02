@@ -1,13 +1,13 @@
 <template>
   <div class="sub-head">
-    <ul class="sub-head-nav">
-      <li class="nav-item">
-        <el-button type="text" @click="onThemeTagClick('')">
+    <ul class="sub-head-nav" ref="subHeadNav">
+      <li class="nav-item is-active">
+        <el-button type="text" @click="onThemeTagClick('', 0)">
           {{ $t('all') }}
         </el-button>
       </li>
       <li class="nav-item" v-for="(item, index) in themeList" :key="index">
-        <el-button type="text" @click="onThemeTagClick(item.value)">
+        <el-button type="text" @click="onThemeTagClick(item.value, index + 1)">
           {{ item.key }}
         </el-button>
       </li>
@@ -39,7 +39,15 @@ export default {
   },
 
   methods: {
-    onThemeTagClick (value = '') {
+    onThemeTagClick (value = '', index) {
+      let activeItem = document.querySelector('.sub-head-nav .is-active')
+      this.$document.removeClass(activeItem, 'is-active')
+
+      let subHeadNav = this.$refs['subHeadNav']
+      let navItem = subHeadNav.querySelectorAll('.nav-item')
+      this.$document.addClass(navItem[index], 'is-active')
+
+      // this.tableControl.theme = value
       this.$emit('fetch-search', { theme: value })
     }
   },
@@ -73,6 +81,11 @@ export default {
         color: $black-grey;
         font-size: 1.5rem;
         font-weight: 500;
+      }
+    }
+    .is-active{
+      .el-button{
+        color: $blue;
       }
     }
   }
