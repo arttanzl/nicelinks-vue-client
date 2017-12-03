@@ -76,7 +76,7 @@ export default {
     display: flex;
     margin: 0;
     .nav-item{
-      margin: auto 0.6rem;
+      margin: auto 0.88rem;
       .el-button{
         color: $black-grey;
         font-size: 1.5rem;

@@ -118,6 +118,7 @@ export default {
     height: calc(100% - 80px);
     position: fixed;
     overflow-y: scroll;
+    overflow-x: hidden;
     top: $header-height;
     z-index: 1000;
     background-color: $white;

@@ -46,19 +46,32 @@ export default {
   },
 
   mounted () {
-    let currentClassify = this.$route.params.classify
-    let currentItem = $config.classify.find(item => {
-      return currentClassify === item.name
-    })
-
-    if (currentItem && currentItem['value']) {
-      this.tableControl.classify = currentItem && currentItem['value']
-    }
-    this.themeList = $config.theme[this.tableControl.classify]
+    this.setFetchData()
     this.$fetchSearch()
   },
 
   methods: {
+    setFetchData () {
+      let currentClassify = this.$route.params.classify
+      let currentItem = $config.classify.find(item => {
+        return currentClassify === item.name
+      })
+
+      if (currentItem && currentItem['value']) {
+        this.tableControl.classify = currentItem && currentItem['value']
+      }
+      this.setThemeList()
+    },
+
+    setThemeList () {
+      let allThemeList = []
+      console.log($config.theme)
+      $config.theme.map(item => {
+        allThemeList = allThemeList.concat(item)
+      })
+      let classify = this.tableControl.classify
+      this.themeList = classify ? $config.theme[classify] : allThemeList
+    }
   }
 }
 </script>
