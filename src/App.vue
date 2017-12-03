@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <!-- <v-touch v-on:swipeleft="onSwipeLeft"
+    <v-touch v-on:swipeleft="onSwipeLeft"
       v-on:swiperight="onSwipeRight"
       v-bind:swipe-options="{ direction: 'horizontal', threshold: 120 }">
       <router-view></router-view>
-    </v-touch> -->
-    <router-view></router-view>
+    </v-touch>
   </div>
 </template>
 
