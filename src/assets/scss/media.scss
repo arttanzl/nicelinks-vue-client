@@ -71,8 +71,8 @@
   }
 
   #app .side-nav{
-    top: $header-mobile-height;
-    height: calc(100% - 60px);
+    top: 0;
+    height: 100%;
   }
 
   #app .menu-expand{

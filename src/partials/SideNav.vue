@@ -1,5 +1,8 @@
 <template>
 <div class="side-nav">
+  <a href="/explore/all" class="side-nav-logo">
+    <h3 align="center">{{ $t('niceLinksStr') }}</h3>
+  </a>
   <el-menu :default-openeds="['1']" default-active="1" class="el-menu-vertical-demo"
     @open="handleOpen" @close="handleClose" theme="light">
     <el-submenu index="1">
@@ -149,6 +152,12 @@ export default {
       display: block;
       width: calc(100vw - 100%);
       height: 100%;
+    }
+    .side-nav-logo{
+      display: inline-block;
+      width: 100%;
+      margin: 1rem auto;
+      text-align: center;
     }
   }
 </style>
