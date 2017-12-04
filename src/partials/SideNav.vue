@@ -3,6 +3,9 @@
   <a href="/explore/all" class="side-nav-logo">
     <h3 align="center">{{ $t('niceLinksStr') }}</h3>
   </a>
+  <a href="javascript:;" class="side-nav-close" @click="onToggleMenuClick">
+    <i class="el-icon-close"></i>
+  </a>
   <el-menu :default-openeds="['1']" default-active="1" class="el-menu-vertical-demo"
     @open="handleOpen" @close="handleClose" theme="light">
     <el-submenu index="1">
@@ -104,6 +107,10 @@ export default {
       this.$bus.$emit('trigger-sidenav')
     },
 
+    onToggleMenuClick () {
+      this.$bus.$emit('trigger-sidenav')
+    },
+
     handleOpen () {
     },
 
@@ -158,6 +165,12 @@ export default {
       width: 100%;
       margin: 1rem auto;
       text-align: center;
+    }
+    .side-nav-close{
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: $black;
     }
   }
 </style>

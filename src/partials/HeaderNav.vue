@@ -8,7 +8,7 @@
         </a></h1>
       </div>
 
-      <a href="javascript:;" class="menu" @click="onToggleMenuClick" >
+      <a href="javascript:;" class="menu" @click="onToggleMenuClick">
         <span></span>
       </a>
 

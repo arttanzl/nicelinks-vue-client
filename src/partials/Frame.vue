@@ -37,8 +37,6 @@ export default {
 
   created () {
     this.$bus.on('trigger-sidenav', (isHide = false) => {
-      let app = document.getElementById('app')
-      app.className = (!isHide && !app.className) ? 'menu-expand' : ''
       this.isShowSideNav = !isHide && !this.isShowSideNav
     })
 
