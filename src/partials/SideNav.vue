@@ -1,7 +1,9 @@
 <template>
 <div class="side-nav">
   <a href="/explore/all" class="side-nav-logo">
-    <h3 align="center">{{ $t('niceLinksStr') }}</h3>
+    <img src="https://nicelinks.site/static/img/favicons/safari-pinned-tab.svg"
+      :alt="$t('niceLinksStr')">
+    <h3>{{ $t('niceLinksStr') }}</h3>
   </a>
   <a href="javascript:;" class="side-nav-close" @click="onToggleMenuClick">
     <i class="el-icon-close"></i>
@@ -162,14 +164,23 @@ export default {
     }
     .side-nav-logo{
       display: inline-block;
+      color: $black;
       width: 100%;
-      margin: 1rem auto;
+      margin: 2rem 0 0 0;
       text-align: center;
+      h3{
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+      }
+      img{
+        width: 3rem;
+      }
     }
     .side-nav-close{
       position: absolute;
-      top: 15px;
-      left: 15px;
+      top: 1.2rem;
+      left: 1.2rem;
       color: $black;
     }
   }

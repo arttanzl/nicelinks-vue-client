@@ -5,7 +5,9 @@
         <div class="main-container">
           <div class="entry-list">
             <sub-head :theme-list="themeList" @fetch-search="$fetchSearch"></sub-head>
-            <operate-tabs @switch-tabs="$onSwitchTabs"></operate-tabs>
+            <operate-tabs class="operate-tabs-space"
+              @switch-tabs="$onSwitchTabs">
+            </operate-tabs>
             <links-list :pdata="niceLinksArr" :is-loading="isLoading"></links-list>
             <load-more></load-more>
           </div>
@@ -65,7 +67,6 @@ export default {
 
     setThemeList () {
       let allThemeList = []
-      console.log($config.theme)
       $config.theme.map(item => {
         allThemeList = allThemeList.concat(item)
       })
@@ -79,5 +80,8 @@ export default {
 <style type="text/css" lang="scss" scoped>
 @import "../assets/scss/variables.scss";
 .entry-list{
+  .operate-tabs-space{
+    padding-top: 5rem;
+  }
 }
 </style>

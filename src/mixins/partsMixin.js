@@ -14,7 +14,6 @@ export default {
       isShowLoadMore: true,
       niceLinksArr: [],
       tableControl: {
-        // classify: -1,
         pageCount: 1,
         pageSize: 15,
         sortType: -1,
@@ -29,6 +28,7 @@ export default {
   methods: {
     drawAjaxParams () {
       let params = this.$_.cloneDeep(this.tableControl)
+      params.active = true
       params.userId = this.userInfo && this.userInfo._id || ''
 
       let classifyVal = getValueByName($config.classify, this.$route.params.classify)
@@ -66,7 +66,7 @@ export default {
       }).catch((error) => {
         this.isLoading = false
         this.$message.error(`${error}`)
-        // this.niceLinksArr = $config.default
+        this.niceLinksArr = $config.default
       }).finally(() => {
         this.isLoading = false
       })
