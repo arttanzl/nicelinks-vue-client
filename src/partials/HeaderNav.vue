@@ -3,9 +3,12 @@
   <header class="header">
     <nav class="nav">
       <div class="header-logo">
-        <h1><a  class="header-logo-a" href="javascript:;" @click="onLogoClick">
-          <img class="header-logo-img" src="./../assets/images/nice_links.png" alt="">
-        </a></h1>
+        <a  class="header-logo-a" href="javascript:;" @click="onLogoClick">
+          <img class="header-logo-img"
+            src="https://nicelinks.site/static/img/favicons/safari-pinned-tab.svg"
+            :alt="$t('niceLinksStr')">
+          <h1>{{ $t('niceLinksStr') }}</h1>
+        </a>
       </div>
 
       <a href="javascript:;" class="menu" @click="onToggleMenuClick">
@@ -226,10 +229,19 @@ export default {
       margin: 15px 0;
       width: 180px;
       .header-logo-a{
+        display: table;
         height: $header-height / 2;
+        line-height: $header-height / 2;
         color: #333;
         .header-logo-img{
-          width: 100%;
+          width: 3rem;
+        }
+        h1{
+          margin: 0 1rem;
+          font-size: 2rem;
+          display: inline-block;
+          text-align: center;
+          vertical-align: middle;
         }
       }
     }
@@ -285,6 +297,49 @@ export default {
   .el-dropdown-menu__item{
     display: flex !important;
     align-items: center !important;
+  }
+}
+
+@media screen and (max-width: $mobile-screen) {
+  #app .header{
+    height: $header-mobile-height;
+    .nav{
+      padding: 0;
+      .header-logo{
+        float: none !important;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+        margin: 0px;
+      }
+      .header-logo-a{
+        width: 100%;
+        height: $header-mobile-height;
+        line-height: $header-mobile-height;
+        .header-logo-img{
+          margin: 10px 0;
+        }
+      }
+      .menu{
+        display: block;
+        padding: 20px 15px;
+        width: $header-mobile-height;
+        height: $header-mobile-height;
+      }
+      .not-loggedin, .el-dropdown-link{
+        display: block;
+        line-height: $header-mobile-height;
+        height: $header-mobile-height;
+      }
+      .operate-link{
+        display: none;
+      }
+      .inject-btn, .find-more{
+        display: none;
+      }
+    }
   }
 }
 </style>

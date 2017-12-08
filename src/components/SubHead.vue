@@ -71,6 +71,14 @@ export default {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
   transition: all .2s;
   transform: translateZ(0);
+  &::-webkit-scrollbar {
+    background: transparent;
+    height: 0px;
+  }
+  &:hover::-webkit-scrollbar {
+    background: transparent;
+    height: 0px;
+  }
   .sub-head-nav{
     width: 100%;
     display: flex;
