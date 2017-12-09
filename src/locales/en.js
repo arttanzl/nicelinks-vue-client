@@ -17,7 +17,7 @@ export default {
   save: 'Save',
   delete: 'Delete',
   warmReminder: 'Warm Reminder',
-  niceLinksStr: 'Nice Links',
+  niceLinksStr: 'NICE LINKS',
 
   skill: 'Technical Inn',
   resource: 'Resources',

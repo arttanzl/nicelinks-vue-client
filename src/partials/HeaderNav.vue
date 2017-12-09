@@ -3,9 +3,8 @@
   <header class="header">
     <nav class="nav">
       <div class="header-logo">
-        <a  class="header-logo-a" href="javascript:;" @click="onLogoClick">
-          <img class="header-logo-img"
-            src="https://nicelinks.site/static/img/favicons/safari-pinned-tab.svg"
+        <a class="header-logo-a nicelinks-logo" href="javascript:;" @click="onLogoClick">
+          <img src="/static/img/favicons/safari-pinned-tab.svg"
             :alt="$t('niceLinksStr')">
           <h1>{{ $t('niceLinksStr') }}</h1>
         </a>
@@ -226,23 +225,12 @@ export default {
     .header-logo{
       display: inline-block;
       float: left;
-      margin: 15px 0;
+      margin: 20px 0;
       width: 180px;
       .header-logo-a{
         display: table;
         height: $header-height / 2;
         line-height: $header-height / 2;
-        color: #333;
-        .header-logo-img{
-          width: 3rem;
-        }
-        h1{
-          margin: 0 1rem;
-          font-size: 2rem;
-          display: inline-block;
-          text-align: center;
-          vertical-align: middle;
-        }
       }
     }
     .operate-link{

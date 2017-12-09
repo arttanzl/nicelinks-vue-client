@@ -1,8 +1,11 @@
 <template>
   <div class="login-wrap">
     <div class="login-box" v-loading.body="isLoading">
-      <a href="/"><img src="../assets/images/nice_links.png" alt="nice links logo"></a>
-      <h3>{{ isSignUpPage ? $t('signUp') : $t('signIn') }}</h3>
+      <a href="/explore/all" class="nicelinks-logo">
+        <img src="/static/img/favicons/safari-pinned-tab.svg"
+          :alt="$t('niceLinksStr')">
+        <h1>{{ $t('niceLinksStr') }}</h1>
+      </a>
       <div class="form-group">
         <el-alert
           v-if="tipMessageObj.message"
@@ -252,15 +255,14 @@
   display: table;
   border-radius: 3px;
   border: 1px solid #d7dce5;
+  .nicelinks-logo{
+    margin-bottom: 1rem;
+  }
   .heading{
     text-align: center;
     margin-bottom: 30px;
     font-size: 24px;
     color: #707473;
-  }
-  img{
-    display: block;
-    margin: 0 auto 20px;
   }
   .el-form-item{
     margin-bottom: 30px;
