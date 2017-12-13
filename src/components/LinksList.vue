@@ -34,6 +34,9 @@
           href="javascript:;" target="_blank">{{ item.title }}
         </a>
       </h3>
+      <div class="abstract">
+        {{ item.abstract || $util.interceptString(item.desc) }}
+      </div>
       <slot name="link-desc"></slot>
       <div class="action-list">
         <div class="action-item" @click.stop="onLikeClick(item)">
@@ -215,7 +218,7 @@ export default {
       .title{
         margin: .4em 0;
         .title-link{
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           font-weight: 600;
           line-height: 1.2;
           text-decoration: none;
@@ -224,6 +227,14 @@ export default {
             color: $link-title-hover;
           }
         }
+      }
+      .abstract{
+        width: 100%;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: $black-grey;
+        line-height: 1.5;
+        letter-spacing: .02rem;
       }
       .meta{
         font-size: 1.314rem;

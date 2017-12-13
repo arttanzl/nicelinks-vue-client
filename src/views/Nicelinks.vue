@@ -79,9 +79,12 @@ export default {
 
 <style type="text/css" lang="scss" scoped>
 @import "../assets/scss/variables.scss";
-.entry-list{
-  .operate-tabs-space{
-    padding-top: 5rem;
+
+@media screen and (max-width: $mobile-screen) {
+  .entry-list{
+    .operate-tabs-space{
+      padding-top: 5rem;
+    }
   }
 }
 </style>

@@ -144,6 +144,9 @@ export default {
     return [currentH, currentM, currentS].join(delimiter)
   },
 
+  interceptString (string, length = 300) {
+    return string.substring(0, length)
+  },
   /* -----------------------------localStorage------------------------------------ Start */
   /*
    * set localStorage
