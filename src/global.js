@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import VueI18n from 'vue-i18n'
-import VueTouch from 'vue-touch'
+// import VueTouch from 'vue-touch'
 import Cookies from 'js-cookie'
 import VueBus from 'vue-bus'
 import SocialSharing from 'vue-social-sharing'
@@ -14,7 +14,7 @@ Vue.use(ElementUI)
 Vue.use(VueI18n)
 Vue.use(SocialSharing)
 Vue.use(VueBus)
-Vue.use(VueTouch, {name: 'v-touch'})
+// Vue.use(VueTouch, {name: 'v-touch'})
 
 // Initialize the sentry error reporting @2017-10-29
 $errorReport.init()
