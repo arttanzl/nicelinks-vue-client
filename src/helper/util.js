@@ -144,8 +144,17 @@ export default {
     return [currentH, currentM, currentS].join(delimiter)
   },
 
-  interceptString (string, length = 300) {
-    return string.substring(0, length)
+  getByteLength (str = '') {
+    if (typeof str !== 'string') return str.length
+    return str.replace(/[^\x00-\xff]/g, 'aa').length
+  },
+
+  interceptString (string = '', length = 140) {
+    if (this.getByteLength(string) > 140) {
+      return string.substring(0, length) + '...'
+    } else {
+      return string
+    }
   },
   /* -----------------------------localStorage------------------------------------ Start */
   /*

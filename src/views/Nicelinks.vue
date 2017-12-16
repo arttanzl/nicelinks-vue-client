@@ -4,11 +4,18 @@
       <div class="panel-body">
         <div class="main-container">
           <div class="entry-list">
-            <sub-head :theme-list="themeList" @fetch-search="$fetchSearch"></sub-head>
+            <sub-head
+              :theme-list="themeList"
+              @fetch-search="$fetchSearch">
+            </sub-head>
             <operate-tabs class="operate-tabs-space"
               @switch-tabs="$onSwitchTabs">
             </operate-tabs>
-            <links-list :pdata="niceLinksArr" :is-loading="isLoading"></links-list>
+            <links-list
+              :is-abstract="true"
+              :pdata="niceLinksArr"
+              :is-loading="isLoading">
+            </links-list>
             <load-more></load-more>
           </div>
           <aside-list></aside-list>

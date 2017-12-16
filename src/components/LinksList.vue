@@ -34,7 +34,7 @@
           href="javascript:;" target="_blank">{{ item.title }}
         </a>
       </h3>
-      <div class="abstract">
+      <div class="abstract" v-if="isAbstract">
         {{ item.abstract || $util.interceptString(item.desc) }}
       </div>
       <slot name="link-desc"></slot>
@@ -104,6 +104,10 @@ export default {
       default: []
     },
     isLoading: {
+      type: Boolean,
+      default: false
+    },
+    isAbstract: {
       type: Boolean,
       default: false
     }

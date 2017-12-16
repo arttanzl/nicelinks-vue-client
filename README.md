@@ -1,4 +1,4 @@
-<p align="center"><a href="https://nicelinks.site">倾城之链</a></p>
+<h1 align="center"><a href="https://nicelinks.site">倾城之链</a></h1>
 
 ## 目标与哲学
 
