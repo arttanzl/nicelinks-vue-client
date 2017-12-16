@@ -3,11 +3,11 @@
   <header class="header">
     <nav class="nav">
       <div class="header-logo">
-        <a class="header-logo-a nicelinks-logo" href="javascript:;" @click="onLogoClick">
+        <router-link to="/" class="header-logo-a nicelinks-logo">
           <img src="/static/img/favicons/safari-pinned-tab.svg"
             :alt="$t('niceLinksStr')">
           <h1>{{ $t('niceLinksStr') }}</h1>
-        </a>
+        </router-link>
       </div>
 
       <a href="javascript:;" class="menu" @click="onToggleMenuClick">
@@ -161,12 +161,6 @@ export default {
 
     onSwitchLangClick () {
       this.$switchLang()
-    },
-
-    onLogoClick () {
-      this.$bus.$emit('trigger-sidenav', true)
-      this.$router.push('/')
-      this.$bus.emit('fetch-search')
     },
 
     onToggleMenuClick () {

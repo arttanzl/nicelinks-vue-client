@@ -1,10 +1,10 @@
 <template>
 <div class="side-nav">
-  <a href="/explore/all" class="nicelinks-logo">
+  <router-link to="/explore/all" class="nicelinks-logo">
     <img src="/static/img/favicons/safari-pinned-tab.svg"
       :alt="$t('niceLinksStr')">
     <h1>{{ $t('niceLinksStr') }}</h1>
-  </a>
+  </router-link>
   <a href="javascript:;" class="side-nav-close" @click="onToggleMenuClick">
     <i class="el-icon-close"></i>
   </a>

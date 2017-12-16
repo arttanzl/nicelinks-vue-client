@@ -55,6 +55,11 @@
   width: 100%;
   margin: 0;
   text-align: center;
+  &:hover,
+  &:focus,
+  &:active,{
+    color: $purple;
+  }
   h1{
     margin: 0 1rem;
     font-size: 2rem;
