@@ -27,24 +27,47 @@
       </section>
     </section>
   </section>
+  <div>
+    <CountUp
+      :start="0"
+      :end="120500"
+      :decimals="0"
+      :duration="2.5"
+      :options="countUpoptions"
+      @callback="onCountUpCallback">
+    </CountUp>
+  </div>
 </div>
 </template>
 
 <script>
 import './../assets/css/flower.css'
+import CountUp from 'components/CountUp'
 
 export default {
   name: 'Index',
 
   data () {
     return {
+      countUpoptions: {
+        useEasing: true,
+        useGrouping: true,
+        separator: ',',
+        decimal: '.',
+        prefix: '',
+        suffix: ''
+      }
     }
   },
 
   components: {
+    CountUp
   },
 
   methods: {
+    onCountUpCallback: (ins) => {
+      // ins.update(ins.endVal + 100)
+    }
   },
 
   locales: {
