@@ -4,7 +4,13 @@
 
 <style scoped>
 .countup{
-  font-size: 5rem;
+  font-size: 8.8rem;
+  background: #212121;
+  -webkit-background-clip:text;
+  -moz-background-clip: text;
+  background-clip:text;
+  color: transparent;
+  text-shadow: 0 3px 3px rgba(255,255,255,0.5);
 }
 </style>
 

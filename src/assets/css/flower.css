@@ -233,9 +233,15 @@
 }
 
 .flower-container a {
+  box-sizing: border-box;
+  border: 1px solid #2c85ff;
+  padding: 0.25em 1em;
   color: #2c85ff;
   font-weight: bold;
   line-height: 3em;
+  border-radius: 2em;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
