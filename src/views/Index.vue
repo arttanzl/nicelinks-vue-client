@@ -16,7 +16,7 @@
           <span class="part"></span>
           <span class="part"></span>
           <span class="part"></span>
-          <h1>{{ $t('niceLinksStr') }}</h1>
+          <h1 class="large-font">{{ $t('niceLinksStr') }}</h1>
           <p>
             {{ $t('niceLinksDesc') }}
             <br>
@@ -27,7 +27,7 @@
     </section>
   </section>
   <div class="countup-area">
-    <p class="countup-text">{{ $t('countupText') }}</p>
+    <h2 class="medium-font">{{ $t('countupText') }}</h2>
     <CountUp
       class="countup-number"
       :start="0"
@@ -127,6 +127,65 @@ export default {
 }
 .lotus{}
 
+.flower-container h1 {
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  left: -10em;
+  right: -10em;
+  top: calc(50% - 2em);
+  text-shadow: 0 0 2em #fff
+}
+
+.flower-container p {
+  text-align: center;
+  position: absolute;
+  left: -10em;
+  right: -10em;
+  top: 50%;
+  text-shadow: 0 0 2em #fff
+}
+
+.flower-container a {
+  box-sizing: border-box;
+  border: 1px solid #2c85ff;
+  padding: 0.25em 1em;
+  color: #2c85ff;
+  font-weight: bold;
+  line-height: 3em;
+  border-radius: 2em;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .flower-container .flower {
+    font-size: 1.8rem !important;
+  }
+  .flower-container .flower p {
+    font-size: 2.2rem;
+    padding: 0px 10px;
+    line-height: 2.2rem;
+    left: -6em;
+    right: -6em;
+  }
+}
+@media (max-width: 560px) {
+  .flower-container .flower p {
+    font-size: 2.1rem;
+    padding: 0px 10px;
+    line-height: 2.1rem;
+    left: -4em;
+    right: -4em;
+  }
+}
+
+@media (max-width: 390px) {
+  .flower-container .flower {
+    font-size: 12px
+  }
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -153,9 +212,6 @@ export default {
 }
 
 .countup-area{
-  .countup-text{
-    font-size: 1.8rem;
-  }
   .countup-number{
     display: block;
   }
