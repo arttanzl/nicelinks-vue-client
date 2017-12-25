@@ -90,12 +90,18 @@ export default {
     return {
       isShowDlgFlag: false,
       isMobile: window.innerWidth <= 960,
-      activeName: '-1',
+      activeName: '',
       navList: $config.classify
     }
   },
 
   components: {
+  },
+
+  watch: {
+    $route: function (to, from) {
+      this.updateNavActive()
+    }
   },
 
   computed: {
@@ -127,8 +133,8 @@ export default {
 
   methods: {
     updateNavActive () {
-      let currentPath = this.$route.path.replace('/', '')
-      this.activeName = currentPath
+      let tempPathArr = this.$route.path.split('/') || []
+      this.activeName = tempPathArr[tempPathArr.length - 1]
     },
 
     handleClick (item) {
