@@ -86,11 +86,6 @@ export default {
 <style lang="scss">
 @import "./../../assets/scss/variables.scss";
 @import './../../assets/scss/mixins.scss';
-.xxx{
-  background: #8e9eab;
-  background: -webkit-linear-gradient(to top, #8e9eab, #eef2f3);
-  background: linear-gradient(to top, #8e9eab, #eef2f3);
-}
 
 .countup-area{
   .countup-number{
@@ -99,7 +94,7 @@ export default {
   }
   color: #000;
   width: 100%;
-  height: 30rem;
+  height: $section-height;
   @include flex-box-center(column);
   background: #f4f6fa;
   background: -webkit-linear-gradient(to top, #f4f6fa, #eef2f3);
