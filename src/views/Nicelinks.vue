@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper" id="nice-links">
-    <div class="panel-default" v-loading="isLoading">
+    <div class="panel-default">
       <div class="panel-body">
         <div class="main-container">
           <div class="entry-list">

@@ -30,8 +30,8 @@ export default {
       introductionDesc: 'In the information world, massive messages may make you worry about missing her at a loss; efforts to learn at the same time, it may miss more;City chain, that is for you to solve this kind of problem; here, you can browse all kinds of global crystallization of wisdom; rich vision at the same time, can be marked or share your love of the site, which can also provide reference for more people to dig the message.'
     },
     zh: {
-      introductionTitle: '探索更广阔的世界，为你',
-      introductionDesc: '在这个信息化的世界，海量的讯息可能让你不知所措；担心错过她而努力汲取的同时，却可能错过更多；<br>倾城之链的存在，即是为您解决这种困扰；在这里，您可以浏览全球各类智慧的结晶；<br>丰富视野的同时，可以标注抑或分享您喜欢的站点，从而也可以为更多的人挖掘讯息提供参考。'
+      introductionTitle: '探索更广阔的世界，为您',
+      introductionDesc: '在这个信息化的世界，海量的讯息可能让您不知所措；担心错过她而努力汲取的同时，却可能错过更多；<br>倾城之链的存在，即是为您解决这种困扰；在这里，您可以浏览全球各类智慧的结晶；<br>丰富视野的同时，可以标注抑或分享您喜欢的站点，从而为更多挖掘讯息的人提供建设性参考。'
     }
   }
 }

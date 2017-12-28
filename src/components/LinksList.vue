@@ -10,6 +10,8 @@
       </el-card>
       <content-placeholder v-else slot="link-desc" :rows="placeholderRows">
       </content-placeholder>
+      <content-placeholder v-else slot="link-desc" :rows="placeholderRows">
+      </content-placeholder>
     </div>
   </div>
 
