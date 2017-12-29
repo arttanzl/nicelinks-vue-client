@@ -57,8 +57,9 @@
   text-align: center;
   &:hover,
   &:focus,
+  &:link,
   &:active,{
-    color: $purple;
+    color: $black;
   }
   h1{
     margin: 0 1rem;
@@ -69,8 +70,9 @@
     vertical-align: middle;
     &:hover,
     &:focus,
+    &:link,
     &:active,{
-      color: $purple;
+      color: $black;
     }
   }
   img{

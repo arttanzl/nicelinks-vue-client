@@ -31,7 +31,7 @@ export default {
     },
     zh: {
       introductionTitle: '探索更广阔的世界，为您',
-      introductionDesc: '在这个信息化的世界，海量的讯息可能让您不知所措；担心错过她而努力汲取的同时，却可能错过更多；<br>倾城之链的存在，即是为您解决这种困扰；在这里，您可以浏览全球各类智慧的结晶；<br>丰富视野的同时，可以标注抑或分享您喜欢的站点，从而为更多挖掘讯息的人提供建设性参考。'
+      introductionDesc: `在这个信息化的世界，海量的讯息可能让您不知所措；担心错过她而努力汲取的同时，却可能错过更多；<br><a href="javascript:;">倾城之链</a>的存在，即是为您解决这种困扰；在这里，您可以浏览全球各类智慧的结晶；<br>丰富视野的同时，可以标注抑或分享您喜欢的站点，从而为更多挖掘讯息的人提供建设性参考。`
     }
   }
 }
@@ -46,13 +46,16 @@ export default {
   height: $section-height;
   padding: 0 15%;
   @include flex-box-center(column);
-  background: #20a0ff;
-  background: -webkit-linear-gradient(to top, #20a0ff, #ffffff);
-  background: linear-gradient(to top, #20a0ff, #ffffff);
+  color: $white;
+  background-color: $black;
+  // background: #20a0ff;
+  // background: -webkit-linear-gradient(to top, #20a0ff, #ffffff);
+  // background: linear-gradient(to top, #20a0ff, #ffffff);
   .desc{
     margin-top: 20px;
+    text-align: center;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 2.6rem;
   }
 }
 
@@ -60,7 +63,12 @@ export default {
   .homepage-introduction{
     padding: 0 1.8rem;
     .desc{
+      text-align: left;
       font-size: 1.8rem;
+      line-height: 2rem;
+      br{
+        line-height: 3rem;
+      }
     }
   }
 }

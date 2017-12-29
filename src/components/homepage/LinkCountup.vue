@@ -92,7 +92,7 @@ export default {
     display: block;
     margin-top: 10px;
   }
-  color: #000;
+  color: $black;
   width: 100%;
   height: $section-height;
   @include flex-box-center(column);

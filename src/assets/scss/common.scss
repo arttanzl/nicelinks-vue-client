@@ -41,9 +41,11 @@ label {
   font-weight: normal;
 }
 a{
+  color: $blue;
   text-decoration: none;
 }
 a:hover, a:visited, a:link{
+  color: $blue;
   text-decoration: none;
 }
 
