@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <HomeLotus></HomeLotus>
+    <NiceFantasy></NiceFantasy>
     <Introduction></Introduction>
     <LinkCountup></LinkCountup>
   </div>
@@ -9,6 +10,7 @@
 <script>
 import './../assets/css/flower.css'
 import HomeLotus from 'components/homepage/HomeLotus'
+import NiceFantasy from 'components/homepage/NiceFantasy'
 import Introduction from 'components/homepage/Introduction'
 import LinkCountup from 'components/homepage/LinkCountup'
 
@@ -22,6 +24,7 @@ export default {
 
   components: {
     HomeLotus,
+    NiceFantasy,
     Introduction,
     LinkCountup
   },

@@ -48,9 +48,6 @@ export default {
   @include flex-box-center(column);
   color: $white;
   background-color: $black;
-  // background: #20a0ff;
-  // background: -webkit-linear-gradient(to top, #20a0ff, #ffffff);
-  // background: linear-gradient(to top, #20a0ff, #ffffff);
   .desc{
     margin-top: 20px;
     text-align: center;
