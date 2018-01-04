@@ -16,42 +16,44 @@
   </div>
 
   <div class="moudle" v-for="(item, index) in pdata" v-if="pdata.length > 0">
-    <div class="content" @click="onMoudleClick(item)">
-      <div class="meta">
-        <span class="item classify"
-          @click.stop="onThemeClick(item.theme)">
-          {{ fillThemeName(item.classify, item.theme) }}
-        </span>
-        <span class="item" @click.stop="onUserClick(item.createdBy)">
-          {{ item.createdBy || '' }}
-        </span>
-        <span >{{ item.created | dateOffset }}</span>
-        <span class="tag"
-          v-for="(item, index) in item.tags" :key="index"
-          @click.stop="onTagClick(item)"> {{ item }}
-        </span>
-      </div>
-      <h3 class="title">
-        <a class="title-link" @click.stop="onLinkClick(item)"
-          href="javascript:;" target="_blank">{{ item.title }}
-        </a>
-      </h3>
-      <div class="abstract" v-if="isAbstract">
-        {{ item.abstract || $util.interceptString(item.desc) }}
-      </div>
-      <slot name="link-desc"></slot>
-      <div class="action-list">
-        <div class="action-item" @click.stop="onLikeClick(item)">
-          <icon class="icons" :name="item.isLikes ? 'likes-down' : 'likes'"></icon>
-          <span class="item-num">{{ item.likes }}</span>
+    <router-link :to="getAssembleRoute(item)">
+      <div class="content" @click="onMoudleClick(item)">
+        <div class="meta">
+          <span class="item classify"
+            @click.stop.prevent="onThemeClick(item.theme)">
+            {{ fillThemeName(item.classify, item.theme) }}
+          </span>
+          <span class="item" @click.stop.prevent="onUserClick(item.createdBy)">
+            {{ item.createdBy || '' }}
+          </span>
+          <span >{{ item.created | dateOffset }}</span>
+          <span class="tag"
+            v-for="(item, index) in item.tags" :key="index"
+            @click.stop.prevent="onTagClick(item)"> {{ item }}
+          </span>
         </div>
-        <div class="action-item" @click.stop="onDislikeClick(item)">
-          <icon class="icons" :name="item.isDislikes ? 'dislike-down' : 'dislike'"></icon>
-          <span class="item-num">{{ item.dislikes }}</span>
+        <h3 class="title">
+          <a class="title-link" @click.stop.prevent="onLinkClick(item)"
+            href="javascript:;" target="_blank">{{ item.title }}
+          </a>
+        </h3>
+        <div class="abstract" v-if="isAbstract">
+          {{ item.abstract || $util.interceptString(item.desc) }}
         </div>
+        <slot name="link-desc"></slot>
+        <div class="action-list">
+          <div class="action-item" @click.stop.prevent="onLikeClick(item)">
+            <icon class="icons" :name="item.isLikes ? 'likes-down' : 'likes'"></icon>
+            <span class="item-num">{{ item.likes }}</span>
+          </div>
+          <div class="action-item" @click.stop.prevent="onDislikeClick(item)">
+            <icon class="icons" :name="item.isDislikes ? 'dislike-down' : 'dislike'"></icon>
+            <span class="item-num">{{ item.dislikes }}</span>
+          </div>
+        </div>
+        <slot name="link-share"></slot>
       </div>
-      <slot name="link-share"></slot>
-    </div>
+    </router-link>
   </div>
 </div>
 </template>
@@ -169,8 +171,14 @@ export default {
       return result
     },
 
+    getAssembleRoute (item) {
+      return `/post/${item._id}`
+    },
+
+    /* -----------------------onClickEvent-----------------------Start */
+
     onMoudleClick (item) {
-      let linkId = item._id
+      let linkId = item._id || ''
       this.$router.push(`/post/${linkId}`)
     },
 
@@ -286,9 +294,10 @@ export default {
             height: 1.6rem;
           }
           .icon-green{
-            color: #ff0
+            color: $green;
           }
           .item-num{
+            color: $black;
             margin-left: .2em;
             font-weight: 700;
           }

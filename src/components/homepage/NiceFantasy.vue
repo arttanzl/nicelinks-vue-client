@@ -35,8 +35,7 @@ export default {
 
 .nice-fantasy{
   position: relative;
-  padding: 14rem 0 4rem;
-  background-color: $white;
+  background-color: $black;
   &:before{
     position: absolute;
     display: block;
@@ -44,7 +43,7 @@ export default {
     height: 50%;
     top: 0;
     left: 0;
-    background-color: #151518;
+    background-color: $white;
     margin-top: -1px;
   }
   img{
