@@ -37,6 +37,7 @@ export default {
   position: relative;
   background-color: $black;
   &:before{
+    content: '';
     position: absolute;
     display: block;
     width: 100%;
@@ -49,7 +50,6 @@ export default {
   img{
     position: relative;
     display: block;
-    box-shadow: 0 5px 30px rgba(0,0,0,.15);
     width: 90%;
     max-width: 1280;
     margin: 0 auto;
