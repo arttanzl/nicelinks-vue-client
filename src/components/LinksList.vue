@@ -10,14 +10,12 @@
       </el-card>
       <content-placeholder v-else slot="link-desc" :rows="placeholderRows">
       </content-placeholder>
-      <content-placeholder v-else slot="link-desc" :rows="placeholderRows">
-      </content-placeholder>
     </div>
   </div>
 
   <div class="moudle" v-for="(item, index) in pdata" v-if="pdata.length > 0">
     <router-link :to="getAssembleRoute(item)">
-      <div class="content" @click="onMoudleClick(item)">
+      <div class="content">
         <div class="meta">
           <span class="item classify"
             @click.stop.prevent="onThemeClick(item.theme)">
@@ -70,6 +68,40 @@ export default {
       themeList: $config.theme,
       tagsList: $config.tags,
       placeholderRows: [
+        {
+          height: '2rem',
+          boxes: [[0, '30%']]
+        },
+        {
+          height: '1rem',
+          boxes: [[0, 0]]
+        },
+        {
+          height: '1rem',
+          boxes: [['3rem', '88%']]
+        },
+        {
+          height: '1rem',
+          boxes: [[0, 0]]
+        },
+        {
+          height: '1rem',
+          boxes: [['3rem', '88%']]
+        },
+        {
+          height: '2rem',
+          boxes: [[0, 0]]
+        },
+        {
+          height: '2rem',
+          boxes: [[0, '88%']]
+        },
+        // show again - segmenting placeholder Start
+        {
+          height: '2rem',
+          boxes: [[0, 0]]
+        },
+        // show again - segmenting placeholder End
         {
           height: '2rem',
           boxes: [[0, '30%']]
@@ -176,12 +208,6 @@ export default {
     },
 
     /* -----------------------onClickEvent-----------------------Start */
-
-    onMoudleClick (item) {
-      let linkId = item._id || ''
-      this.$router.push(`/post/${linkId}`)
-    },
-
     onThemeClick (theme) {
       this.$switchRouteByTheme(theme)
     },
