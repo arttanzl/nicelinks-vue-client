@@ -50,11 +50,11 @@ export default {
   locales: {
     en: {
       exploreNice: 'Explore Nice',
-      niceLinksDesc: 'Collection of excellent web sites around the world so that people can see and learn more interesting and useful things'
+      niceLinksDesc: `NICE LINKS, as an open platform, is designed to gather around the world's excellent websites to explore the wider world of the Internet; Here, you can explore, learn, and share more useful or interesting things.`
     },
     zh: {
       exploreNice: '发现美好',
-      niceLinksDesc: '云集全球优秀网站，让人们可以从中，见识和学习更多有趣且有用的事物'
+      niceLinksDesc: '倾城之链，作为一个开放平台，旨在云集全球优秀网站，探索互联网中更广袤的世界；在这里，你可以尽情探索发现、学习、分享更多有用或有趣的事物。'
     }
   }
 }

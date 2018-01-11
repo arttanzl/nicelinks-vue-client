@@ -27,7 +27,7 @@ Vue.prototype.$_ = $lodash
 
 /* inject i18n */
 const browserLanguage = (window.navigator.language || window.navigator.browserLanguage).split('-')[0]
-const lang = Cookies.get('lang') || (browserLanguage in locales ? browserLanguage : 'en')
+const lang = Cookies.get('lang') || (browserLanguage in locales ? browserLanguage : 'zh')
 Vue.config.lang = lang
 Object.keys(locales).forEach(lang => {
   Vue.locale(lang, locales[lang])
