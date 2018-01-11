@@ -123,7 +123,7 @@ export default{
           { required: false, message: this.$t('pleaseEnter'), trigger: 'change,blur' }
         ],
         'profile.website': [
-          { required: false, validator: this.$verifyUrl, trigger: 'change,blur' }
+          { required: false, validator: this.isTheLegalUrl, trigger: 'change,blur' }
         ]
       },
       isShowUploadAvatar: false,
@@ -156,7 +156,6 @@ export default{
         this.headers.imgname = [currentDateStr, currentTimeHMS, this.userInfo._id].join('-')
         this.headers.username = this.userInfo.username || ''
       }).catch(error => {
-        console.log(error)
         this.errorAletTip(`Err: ${error}`, 'error')
         this.isLoading = false
       })
@@ -172,24 +171,30 @@ export default{
       }, 2000)
     },
 
+    isTheLegalUrl (rule, value, callback) {
+      if (value && !this.$util.isLegalUrl(value)) {
+        callback(new Error(this.$t('enterLegalUrl')))
+      } else {
+        callback()
+      }
+    },
+
     onSaveClick () {
       this.$refs['fillForm'].validate((valid) => {
         if (valid) {
           this.isLoading = true
-          let params = this.fillForm
+          let params = this.$_.cloneDeep(this.fillForm)
           delete params.username
           this.$apis.setProfile(params).then(result => {
-            this.isLoading = false
             this.$message({
               message: result,
               type: 'success'
             })
           }).catch(error => {
             this.errorAletTip(error, 'error')
+          }).finally(() => {
             this.isLoading = false
           })
-        } else {
-          return false
         }
       })
     },
