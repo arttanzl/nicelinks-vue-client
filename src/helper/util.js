@@ -118,6 +118,11 @@ export default {
     return pattern.test(str)
   },
 
+  isLegalNick (str) {
+    let pattern = /(.){3,15}$/
+    return pattern.test(str) && this.getByteLength(str) <= 15
+  },
+
   isLegalEmail (str) {
     let pattern = new RegExp('^([a-z0-9_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$', 'g')
     return pattern.test(str)
@@ -144,6 +149,7 @@ export default {
     return [currentH, currentM, currentS].join(delimiter)
   },
 
+  // 获取字符串实际长度(包含汉字,汉字统一按照 2 字节算;)
   getByteLength (str = '') {
     if (typeof str !== 'string') return str.length
     return str.replace(/[^\x00-\xff]/g, 'aa').length

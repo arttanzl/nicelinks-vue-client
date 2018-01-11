@@ -120,7 +120,7 @@ export default{
       },
       rules: {
         'profile.nickname': [
-          { required: false, message: this.$t('pleaseEnter'), trigger: 'change,blur' }
+          { required: false, validator: this.isTheLegalNick, trigger: 'change,blur' }
         ],
         'profile.website': [
           { required: false, validator: this.isTheLegalUrl, trigger: 'change,blur' }
@@ -171,6 +171,14 @@ export default{
       }, 2000)
     },
 
+    isTheLegalNick (rule, value, callback) {
+      if (value && !this.$util.isLegalNick(value)) {
+        callback(new Error(this.$t('enterLegalNick')))
+      } else {
+        callback()
+      }
+    },
+
     isTheLegalUrl (rule, value, callback) {
       if (value && !this.$util.isLegalUrl(value)) {
         callback(new Error(this.$t('enterLegalUrl')))
@@ -218,8 +226,10 @@ export default{
 
   locales: {
     en: {
+      enterLegalNick: 'Please enter 3 ~ 15 arbitrary characters.'
     },
     zh: {
+      enterLegalNick: '请输入 3 ～ 15 位任意字符'
     }
   }
 }
