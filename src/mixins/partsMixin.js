@@ -1,4 +1,5 @@
 import $config from 'config'
+import { mapMutations } from 'vuex'
 
 const getValueByName = (source = [], name = '') => {
   let result = source.filter(item => {
@@ -12,10 +13,9 @@ export default {
     return {
       isLoading: false,
       isShowLoadMore: true,
-      niceLinksArr: [],
       tableControl: {
         pageCount: 1,
-        pageSize: 15,
+        pageSize: 5,
         sortType: -1,
         sortTarget: 'likes'
       }
@@ -23,9 +23,17 @@ export default {
   },
 
   computed: {
+    niceLinksArr () {
+      return this.$store && this.$store.state.nicelinksList || []
+    }
   },
 
   methods: {
+    ...mapMutations([
+      '$setNiceLinksList',
+      '$getNiceLinksList'
+    ]),
+
     drawAjaxParams () {
       let params = this.$_.cloneDeep(this.tableControl)
       params.active = true
@@ -55,18 +63,25 @@ export default {
 
       this.isLoading = true
       this.$apis[apiName](params).then(result => {
-        this.isLoading = false
         if (!result || result.length <= 0) {
-          this.niceLinksArr = []
+          this.$setNiceLinksList({
+            data: [],
+            isLoadMore
+          })
           this.isShowLoadMore = false
           return
         } else {
-          this.niceLinksArr = isLoadMore ? this.niceLinksArr.concat(result) : result
+          this.$setNiceLinksList({
+            data: result,
+            isLoadMore
+          })
         }
       }).catch((error) => {
-        this.isLoading = false
         this.$message.error(`${error}`)
-        this.niceLinksArr = $config.default
+        this.$setNiceLinksList({
+          data: $config.default,
+          isLoadMore
+        })
       }).finally(() => {
         this.isLoading = false
       })

@@ -16,7 +16,8 @@ import { $util } from 'helper'
 Vue.use(Vuex)
 
 const state = {
-  userInfo: $util.getSessionStorage('userInfo')
+  userInfo: $util.getSessionStorage('userInfo'),
+  nicelinksList: []
 }
 
 const debug = process.env.NODE_ENV !== 'production'
