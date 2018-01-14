@@ -41,10 +41,10 @@ export default {
 
   locales: {
     zh: {
-      noMoreDataTip: '嘿，朋友，这儿是有底线的。'
+      noMoreDataTip: '嘿，我是有底线的'
     },
     en: {
-      noMoreDataTip: `Hey, friend, The data here is limited.`
+      noMoreDataTip: `Hey, I have a bottom line.`
     }
   }
 }
