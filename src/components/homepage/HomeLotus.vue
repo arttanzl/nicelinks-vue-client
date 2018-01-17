@@ -1,8 +1,8 @@
 <template>
   <section class="lotus fade-in animated">
-    <section class="twelve columns cssanimations">
-      <section class="flower-container">
-        <section class="flower">
+    <article class="twelve columns cssanimations">
+      <div class="flower-container">
+        <div class="flower">
           <span class="part"></span>
           <span class="part"></span>
           <span class="part"></span>
@@ -15,15 +15,17 @@
           <span class="part"></span>
           <span class="part"></span>
           <span class="part"></span>
-          <h1 class="large-font">{{ $t('niceLinksStr') }}</h1>
-          <p>
+        </div>
+        <div class="unit-wrapper">
+          <h1 class="headline large-font">{{ $t('niceLinksStr') }}</h1>
+          <p class="hero-description">
             {{ $t('niceLinksDesc') }}
             <br>
             <router-link to="/explore/all">{{ $t('exploreNice') }}</router-link>
           </p>
-        </section>
-      </section>
-    </section>
+        </div>
+      </div>
+    </article>
   </section>
 </template>
 
@@ -71,69 +73,83 @@ export default {
   }
 }
 
-.flower-container h1 {
-  font-weight: bold;
-  position: absolute;
-  text-align: center;
-  left: -10em;
-  right: -10em;
-  top: calc(50% - 2em);
-  text-shadow: 0 0 2em #fff
-}
-
-.flower-container p {
-  text-align: center;
-  position: absolute;
-  left: -10em;
-  right: -10em;
-  top: 50%;
-  text-shadow: 0 0 2em #fff
-}
-
-.flower-container a {
-  box-sizing: border-box;
-  border: 1px solid #2c85ff;
-  padding: 0.25em 1em;
-  color: #2c85ff;
-  font-weight: bold;
-  line-height: 3em;
-  border-radius: 2em;
-  transition: all 0.15s ease;
-  box-sizing: border-box;
+.flower-container{
+  position: relative;
+  .unit-wrapper{
+    position: absolute;
+    width: 66%;
+    top: 0;
+    width: 100%;
+    right: 0;
+    bottom: 25%;
+    margin: auto;
+    .headline{
+      font-weight: bold;
+      position: absolute;
+      text-align: center;
+      left: -10em;
+      right: -10em;
+      top: calc(50% - 2em);
+      text-shadow: 0 0 2em #fff
+    }
+    .hero-description {
+      position: absolute;
+      line-height: 2.2rem;
+      top: 50%;
+      font-size: 2.2rem;
+      text-align: center;
+      text-shadow: 0 0 2em #fff;
+      a {
+        box-sizing: border-box;
+        border: 1px solid #2c85ff;
+        padding: 0.25em 1em;
+        color: #2c85ff;
+        font-weight: bold;
+        line-height: 3em;
+        border-radius: 2em;
+        transition: all 0.15s ease;
+        box-sizing: border-box;
+      }
+    }
+  }
 }
 
 @media (max-width: 768px) {
-  .flower-container .flower {
-    font-size: 1.8rem !important;
-  }
-  .flower-container .flower p {
-    font-size: 2.2rem;
-    padding: 0px 10px;
-    line-height: 2.2rem;
-    left: -6em;
-    right: -6em;
+  .flower-container{
+    .flower {
+      font-size: 1.8rem !important;
+    }
+    .unit-wrapper{
+      width: 100%;
+      .hero-description {
+        font-size: 2.2rem;
+        padding: 0px 20px;
+        line-height: 2.2rem;
+      }
+    }
   }
 }
+
 @media (max-width: 560px) {
-  .flower-container .flower p {
-    font-size: 2.1rem;
-    padding: 0px 10px;
-    line-height: 2.1rem;
-    left: -4em;
-    right: -4em;
+  .flower-container{
+    .unit-wrapper .hero-description {
+      font-size: 2.1rem;
+      padding: 0px 10px;
+      line-height: 2.1rem;
+    }
   }
 }
 
 @media (max-width: 414px) {
-  .flower-container .flower {
-    font-size: 1.6rem !important;
-  }
-  .flower-container .flower p {
-    font-size: 1.8rem;
-    padding: 0px 10px;
-    line-height: 1.8rem;
-    left: -4em;
-    right: -4em;
+  .flower-container{
+    .flower {
+      font-size: 1.6rem !important;
+    }
+    .unit-wrapper .hero-description {
+      font-size: 1.8rem;
+      padding: 0px 10px;
+      line-height: 1.8rem;
+    }
   }
 }
 

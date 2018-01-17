@@ -6,8 +6,8 @@
     </transition>
     <main @click="hideMenu" class="main">
       <router-view  :key="$route.path"></router-view>
-      <footer-nav></footer-nav>
     </main>
+    <footer-nav></footer-nav>
     <inject-dialog v-model="isShowDlgFlag"></inject-dialog>
   </div>
 </template>
