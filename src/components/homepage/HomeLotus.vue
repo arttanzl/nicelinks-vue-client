@@ -79,9 +79,9 @@ export default {
     position: absolute;
     width: 66%;
     top: 0;
-    width: 100%;
-    right: 0;
     bottom: 25%;
+    left: 0;
+    right: 0;
     margin: auto;
     .headline{
       font-weight: bold;
