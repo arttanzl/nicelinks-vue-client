@@ -83,6 +83,9 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
+    opacity: 0;
+    animation-delay: 2.75s;
+    animation: show-text 1s 2.5s forwards cubic-bezier(0.1, 0.95, 0.59, 1.22);
     .headline{
       font-weight: bold;
       position: absolute;
@@ -90,7 +93,7 @@ export default {
       left: -10em;
       right: -10em;
       top: calc(50% - 2em);
-      text-shadow: 0 0 2em #fff
+      text-shadow: 0 0 2em $white;
     }
     .hero-description {
       position: absolute;
@@ -98,12 +101,12 @@ export default {
       top: 50%;
       font-size: 2.2rem;
       text-align: center;
-      text-shadow: 0 0 2em #fff;
+      text-shadow: 0 0 2em $white;
       a {
         box-sizing: border-box;
-        border: 1px solid #2c85ff;
+        border: 1px solid $blue;
         padding: 0.25em 1em;
-        color: #2c85ff;
+        color: $blue;
         font-weight: bold;
         line-height: 3em;
         border-radius: 2em;

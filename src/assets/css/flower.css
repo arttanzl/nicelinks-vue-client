@@ -212,8 +212,8 @@
   transform: rotate(315deg)
 }
 
-.cssanimations .part {
-  opacity: 0!important;
+.cssanimations .flower-container .part {
+  opacity: 0;
   animation: linear forwards 2s
 }
 
@@ -275,16 +275,6 @@
 .cssanimations .part:nth-child(12) {
   animation-name: show-small-leaf;
   animation-delay: 2s
-}
-
-.cssanimations .flower-container h1,
-.cssanimations .flower-container p {
-  opacity: 0;
-  animation: show-text 1s 2.5s forwards cubic-bezier(0.1, 0.95, 0.59, 1.22)
-}
-
-.cssanimations .flower-container p ,.cssanimations .flower-container h1{
-  animation-delay: 2.75s
 }
 
 @keyframes show-large-leaf {
