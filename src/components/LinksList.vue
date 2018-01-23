@@ -250,7 +250,7 @@ export default {
 .links-list{
   .moudle{
     margin: 10px;
-    padding: 1.5rem 2rem;
+    padding: 1.6rem 2rem;
     text-align: left;
     border-bottom: 1px solid $item-border-color;
     .content{

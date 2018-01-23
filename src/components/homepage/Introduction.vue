@@ -82,7 +82,9 @@ export default {
       font-size: 1.8rem;
       line-height: 2rem;
       br{
-        line-height: 3.6rem;
+        content: "";
+        display: block;
+        margin: 1rem 0;
       }
     }
   }
@@ -93,9 +95,6 @@ export default {
     padding: 0 1.6rem;
     .desc{
       font-size: 1.6rem;
-      br{
-        line-height: 40px;
-      }
     }
   }
 }
