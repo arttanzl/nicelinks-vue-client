@@ -278,7 +278,7 @@ export default {
       }
       .meta{
         font-size: 1.314rem;
-        color: $meta-item-color;
+        color: $black-grey;
         .item{
           cursor: pointer;
           &:after{
@@ -296,11 +296,11 @@ export default {
           &:before{
             margin: 0 .1em;
             content: "/";
-            color: $meta-item-color;
+            color: $black-grey;
           }
         }
         .classify{
-          color: $meta-classify-color;
+          color: $blue;
           font-size: 500;
         }
       }

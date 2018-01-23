@@ -93,6 +93,9 @@ export default {
     padding: 0 1.6rem;
     .desc{
       font-size: 1.6rem;
+      br{
+        line-height: 40px;
+      }
     }
   }
 }
